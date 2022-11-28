@@ -1,0 +1,59 @@
+<div class="section-1">
+            <div class="nail-collection">
+                <div class="text-con">
+                <div class="nail-heading-text">
+                    <h1>{{ section.settings.heading }}</h1>
+                    <h3>{{ section.settings.sub_heading }}</h3>
+                </div>
+                <div class="nail-text">
+                    <p>{{ section.settings.details_text }}</p>
+                </div>
+            </div>
+            </div>
+            <div class="nail-img-container">
+                <img src="{{ section.settings.section_img |img_url: "master" }}" class="nail-img">
+            </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "welcome Section",
+    "settings": [
+	{
+		"type": "text",
+		"id": "heading",
+		"label": "Enter heading"
+	},
+	{
+		"id": "sub_heading",
+		"type": "text",
+		"label": "Enter sub-heading"
+	},
+	{
+		"id": "details_text",
+		"type": "richtext",
+		"label": "Enter text"
+	},
+	{
+		"id": "section_img",
+		"type": "image_picker",
+		"label": "Put Image"
+	}
+
+],
+"presets": [
+	{
+		"name": "Welcome",
+		"category": "text"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

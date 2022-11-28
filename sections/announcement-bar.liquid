@@ -1,0 +1,87 @@
+<div class="anounce-bar">
+  <div class="left-icon">
+    <i class="fa fa-angle-left" aria-hidden="true"></i>
+  </div>
+  <div class="text-section">
+    <p>{{ section.settings.announcement_text }}</p>
+    <span class="free-shipping">{{ section.settings.announcement_text_mobile }}</span>
+  </div>
+  <div class="right-icon">
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </div>
+</div>
+{% schema %}
+{
+    "name": "announcement-bar",
+    "settings": [
+	{
+		"id": "announcement_text",
+		"type": "text",
+		"label": "Enter announcement"
+	},
+	{
+		"id": "announcement_text_mobile",
+		"type": "text",
+		"label": "Enter announcement"
+	}
+
+],
+
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "options": [
+            {
+              "value": "background-1",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
+            },
+            {
+              "value": "background-2",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
+            },
+            {
+              "value": "inverse",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
+            },
+            {
+              "value": "accent-1",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__4.label"
+            },
+            {
+              "value": "accent-2",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__5.label"
+            }
+          ],
+          "default": "accent-1",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

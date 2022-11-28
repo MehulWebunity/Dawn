@@ -1,0 +1,64 @@
+<div class="section-5">
+  <div class="section-5-img-container-div">
+    <img src="{{ section.settings.section_img |img_url: "master" }}" class="sec-5-img">
+  </div>
+  <div class="section-5-text-container-div">
+    <div class="sec-5-text">
+      <span>{{ section.settings.heading }}</span>
+      <p>{{ section.settings.sub_heading }}</p>  
+    </div>
+    <div class="sec-5-product-container">
+      <img src="{{ section.settings.section_sub_img |img_url: "master" }}" class="sec-5-product-img">
+    </div>
+    <div class="sec-5-button">
+      <a href="#" >{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Expore Section",
+    "settings": [
+	{
+		"id": "heading",
+		"type": "text",
+		"label": "Enter heading"
+	},
+	{
+		"id": "sub_heading",
+		"type": "text",
+		"label": "Enter sub-heading"
+	},
+	{
+		"id": "button_text",
+		"type": "text",
+		"label": "Enter Button name"
+	},
+	{
+		"id": "section_img",
+		"type": "image_picker",
+		"label": "Put main Image"
+	},
+	{
+		"id": "section_sub_img",
+		"type": "image_picker",
+		"label": "Put sub Image"
+	}
+
+],
+"presets": [
+	{
+		"name": "Expore",
+		"category": "text"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
